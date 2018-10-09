@@ -10,28 +10,37 @@ def prioritize(to_prioritize, sorted_priorities):
     print('input: ' + str(sorted_priorities))
 
     # Get positions
-    positions = Positions(to_prioritize, sorted_priorities)
-    compare(to_prioritize, sorted_priorities, positions)
+    compare(to_prioritize, sorted_priorities)
 
 
-def compare(to_prioritize, sorted_priorities, positions):
+def compare(to_prioritize, sorted_priorities):
     # Compare to prioritize 1 and 2
+    positions = Positions(to_prioritize, sorted_priorities)
     to_compare_a = to_prioritize[1]
     to_compare_b = to_prioritize[0]
     sorted_priorities = seed_sorted_list(to_compare_a, to_compare_b, positions, sorted_priorities)
-    sort_the_rest(to_prioritize, sorted_priorities)
+    sort_the_rest(to_prioritize, sorted_priorities, positions)
 
 
-def sort_the_rest(to_prioritize, sorted_priorities):
+def sort_the_rest(to_prioritize, sorted_priorities, positions):
     print(sorted_priorities)
-    positions = Positions(to_prioritize, sorted_priorities)
+
     i = 2
     while i < positions.unsorted_priorities.end:
-        print(to_prioritize[i])
+        positions = Positions(to_prioritize, sorted_priorities)
+        to_compare_a = to_prioritize[i]
         j = 0
         while j < positions.sorted_priorities.end:
-            print(sorted_priorities[j])
+            to_compare_b = sorted_priorities[j]
+            compare_message(to_compare_a, to_compare_b)
+            response = get_input()
+            input_message(response)
             j += 1
+        end = True
+        if end is True:
+            if response == 'n':
+                sorted_priorities.insert(positions.sorted_priorities.end, to_compare_a)
+                print(sorted_priorities)
         i += 1
 
 
