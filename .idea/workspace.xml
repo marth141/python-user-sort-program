@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5977e34-1d09-4af7-83e9-01be80c3312d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/PrioritySort-Reverse.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrioritySort.py" beforeDir="false" afterPath="$PROJECT_DIR$/PrioritySort.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +12,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/PrioritySort$PrioritySort.coverage" NAME="PrioritySort Coverage Results" MODIFIED="1539104446881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PrioritySort$PrioritySort_Reverse.coverage" NAME="PrioritySort-Reverse Coverage Results" MODIFIED="1539120822646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PrioritySort$PrioritySort.coverage" NAME="PrioritySort Coverage Results" MODIFIED="1539104457056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="2071467322">
@@ -24,38 +25,58 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="1" />
+          <entry key="py" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="1" />
+          <entry key="Python" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="14" />
-          <entry key="py" value="7281" />
+          <entry key="py" value="11577" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="7281" />
+          <entry key="Python" value="11577" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PrioritySort.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="69" column="67" selection-start-line="69" selection-start-column="67" selection-end-line="69" selection-end-column="67" />
+            <state relative-caret-position="-629">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <marker date="1539104454742" expanded="true" signature="202:207" ph="..." />
                 <marker date="1539104454742" expanded="true" signature="2774:2905" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/PrioritySort-Reverse.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+              <folding>
+                <marker date="1539120837009" expanded="true" signature="185:354" ph="..." />
+                <marker date="1539120837009" expanded="true" signature="471:476" ph="..." />
+                <marker date="1539120837009" expanded="true" signature="885:1107" ph="..." />
+                <marker date="1539120837009" expanded="true" signature="1186:1920" ph="..." />
+                <marker date="1539120837009" expanded="true" signature="1935:1940" ph="..." />
+                <marker date="1539120837009" expanded="true" signature="1935:2773" ph="..." />
+                <marker date="1539120837009" expanded="true" signature="2794:2953" ph="..." />
+                <marker date="1539120837009" expanded="true" signature="3118:3166" ph="..." />
+                <marker date="1539120837009" expanded="true" signature="3221:3224" ph="..." />
               </folding>
             </state>
           </provider>
@@ -77,6 +98,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/PrioritySort.py" />
+        <option value="$PROJECT_DIR$/PrioritySort-Reverse.py" />
       </list>
     </option>
   </component>
@@ -99,11 +121,26 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="PrioritySort" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PrioritySort" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\NCasa\PycharmProjects\PrioritySort" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -117,7 +154,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.PrioritySort-Reverse">
+    <configuration name="PrioritySort-Reverse" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PrioritySort" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PrioritySort-Reverse.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="PrioritySort" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PrioritySort" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -141,8 +200,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.PrioritySort" />
+      <item itemvalue="Python.PrioritySort-Reverse" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.PrioritySort-Reverse" />
         <item itemvalue="Python.PrioritySort" />
       </list>
     </recent_temporary>
@@ -179,12 +243,12 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Python Console" weight="0.32903227" />
       <window_info anchor="bottom" id="Terminal" weight="0.32903227" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.50053304" side_tool="true" weight="0.31182796" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31182796" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.31182796" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -205,11 +269,29 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/PrioritySort.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="69" column="67" selection-start-line="69" selection-start-column="67" selection-end-line="69" selection-end-column="67" />
+        <state relative-caret-position="-629">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
             <marker date="1539104454742" expanded="true" signature="202:207" ph="..." />
             <marker date="1539104454742" expanded="true" signature="2774:2905" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PrioritySort-Reverse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding>
+            <marker date="1539120837009" expanded="true" signature="185:354" ph="..." />
+            <marker date="1539120837009" expanded="true" signature="471:476" ph="..." />
+            <marker date="1539120837009" expanded="true" signature="885:1107" ph="..." />
+            <marker date="1539120837009" expanded="true" signature="1186:1920" ph="..." />
+            <marker date="1539120837009" expanded="true" signature="1935:1940" ph="..." />
+            <marker date="1539120837009" expanded="true" signature="1935:2773" ph="..." />
+            <marker date="1539120837009" expanded="true" signature="2794:2953" ph="..." />
+            <marker date="1539120837009" expanded="true" signature="3118:3166" ph="..." />
+            <marker date="1539120837009" expanded="true" signature="3221:3224" ph="..." />
           </folding>
         </state>
       </provider>
