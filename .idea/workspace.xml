@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5977e34-1d09-4af7-83e9-01be80c3312d" name="Default Changelist" comment="" />
+    <list default="true" id="d5977e34-1d09-4af7-83e9-01be80c3312d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrioritySort.py" beforeDir="false" afterPath="$PROJECT_DIR$/PrioritySort.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +12,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/PrioritySort$PrioritySort.coverage" NAME="PrioritySort Coverage Results" MODIFIED="1538758082820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PrioritySort$PrioritySort.coverage" NAME="PrioritySort Coverage Results" MODIFIED="1539104446881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="2071467322">
@@ -32,13 +35,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="14" />
-          <entry key="py" value="4101" />
+          <entry key="py" value="7281" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="4101" />
+          <entry key="Python" value="7281" />
         </counts>
       </usages-collector>
     </session>
@@ -48,11 +51,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PrioritySort.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-275">
-              <caret line="76" column="48" lean-forward="true" selection-start-line="76" selection-start-column="48" selection-end-line="76" selection-end-column="48" />
+            <state relative-caret-position="473">
+              <caret line="69" column="67" selection-start-line="69" selection-start-column="67" selection-end-line="69" selection-end-column="67" />
               <folding>
-                <marker date="1538758035426" expanded="true" signature="186:191" ph="..." />
-                <marker date="1538758035426" expanded="true" signature="637:6370" ph="..." />
+                <marker date="1539104454742" expanded="true" signature="202:207" ph="..." />
+                <marker date="1539104454742" expanded="true" signature="2774:2905" ph="..." />
               </folding>
             </state>
           </provider>
@@ -66,6 +69,9 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -86,6 +92,7 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -117,6 +124,7 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="PYCHARM_DEBUG" value="true" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -166,8 +174,8 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984375" visible="true" weight="0.17857143" />
+      <window_info id="Structure" order="1" sideWeight="0.5015625" side_tool="true" visible="true" weight="0.17857143" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
@@ -197,11 +205,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/PrioritySort.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-275">
-          <caret line="76" column="48" lean-forward="true" selection-start-line="76" selection-start-column="48" selection-end-line="76" selection-end-column="48" />
+        <state relative-caret-position="473">
+          <caret line="69" column="67" selection-start-line="69" selection-start-column="67" selection-end-line="69" selection-end-column="67" />
           <folding>
-            <marker date="1538758035426" expanded="true" signature="186:191" ph="..." />
-            <marker date="1538758035426" expanded="true" signature="637:6370" ph="..." />
+            <marker date="1539104454742" expanded="true" signature="202:207" ph="..." />
+            <marker date="1539104454742" expanded="true" signature="2774:2905" ph="..." />
           </folding>
         </state>
       </provider>

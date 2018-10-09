@@ -1,5 +1,6 @@
 import random
-TO_PRIORITIZE = ['A', 'B', 'C', 'D', 'E']
+
+TO_PRIORITIZE = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 SORTED_PRIORITIES = []
 
 
@@ -19,103 +20,64 @@ def primer(priorities, sorted_priorities):
 
 
 def sort_loop(priorities, sorted_priorities):
+    print(sorted_priorities)
     for i in range(2, len(priorities)):
         next_compare = priorities[i]
+        sorted_length = len(sorted_priorities)
 
-        is_even = len(sorted_priorities) % 2 == 0
-        is_odd = len(sorted_priorities) % 2 != 0
+        is_even = sorted_length % 2 == 0
+        is_odd = sorted_length % 2 != 0
 
         sorted_start = 0
-        sorted_median = int(len(sorted_priorities) / 2)
-        sorted_end = len(sorted_priorities) - 1
+        sorted_median = int(sorted_length / 2)
+        sorted_end = sorted_length - 1
+        is_end = check_end(sorted_priorities, sorted_median)
 
-        if is_even:
-            if (len(sorted_priorities)) / 2 == 1:
-                sorted_to_compare_start = sorted_priorities[sorted_start]
-                sorted_to_compare_end = sorted_priorities[sorted_end]
-                print('Is ' + next_compare + ' more important than ' + sorted_to_compare_start + '? (y/n)')
-                response = input()
-                if response == 'y':
-                    insert_point = sorted_priorities.index(sorted_to_compare_start)
-                    sorted_priorities.insert(insert_point, next_compare)
-                    print(sorted_priorities)
-                elif response == 'n':
-                    print('Is ' + next_compare + ' more important than ' + sorted_to_compare_end + '? (y/n)')
-                    response = input()
-                    if response == 'y':
-                        insert_point = sorted_priorities.index(sorted_to_compare_end)
-                        sorted_priorities.insert(insert_point, next_compare)
-                        print(sorted_priorities)
-                    elif response == 'n':
-                        insert_point = sorted_priorities.index(sorted_to_compare_end) + 1
-                        sorted_priorities.insert(insert_point, next_compare)
-                        print(sorted_priorities)
-            elif (len(sorted_priorities) / 2 > 1):
-                sorted_to_compare_start = sorted_priorities[sorted_start]
-                sorted_even_middle1 = sorted_priorities[int((sorted_start + 1) * (len(sorted_priorities) / 2) - 1)]
-                sorted_even_middle2 = sorted_priorities[int((sorted_start + 1) * (len(sorted_priorities) / 2))]
-                sorted_to_compare_end = sorted_priorities[sorted_end]
-                print('Is ' + next_compare + ' more important than ' + sorted_even_middle1 + '? (y/n)')
-                response = input()
-                if response == 'y':
-                    print('Is ' + next_compare + ' more important than ' + sorted_to_compare_start + '? (y/n)')
-                    response = input()
-                    if response == 'y':
-                        insert_point = sorted_priorities.index(sorted_to_compare_start)
-                        sorted_priorities.insert(insert_point, next_compare)
-                        print(sorted_priorities)
-                    elif response == 'n':
-                        insert_point = sorted_priorities.index(sorted_to_compare_start) + 1
-                        sorted_priorities.insert(insert_point, next_compare)
-                        print(sorted_priorities)
-                elif response == 'n':
-                    print('Is ' + next_compare + ' more important than ' + sorted_even_middle2 + '? (y/n)')
-                    response = input()
-                    if response == 'y':
-                        insert_point = sorted_priorities.index(sorted_even_middle2)
-                        sorted_priorities.insert(insert_point, next_compare)
-                        print(sorted_priorities)
-                    elif response == 'n':
-                        print('Is ' + next_compare + ' more important than ' + sorted_to_compare_end + '? (y/n)')
-                        response = input()
-                        if response == 'y':
-                            insert_point = sorted_priorities.index(sorted_to_compare_end) + 1
-                            sorted_priorities.insert(insert_point, next_compare)
-                            print(sorted_priorities)
-                        elif response == 'n':
-                            insert_point = sorted_priorities.index(sorted_to_compare_end) + 1
-                            sorted_priorities.insert(insert_point, next_compare)
-                            print(sorted_priorities)
-        elif is_odd:
-            sorted_to_compare_median = sorted_priorities[sorted_median]
-            print('Is ' + next_compare + ' more important than ' + sorted_to_compare_median + '? (y/n)')
-            response = input()
-            if response == 'y':
-                sorted_to_compare_end = sorted_priorities[sorted_median - 1]
-                print('Is ' + next_compare + ' more important than ' + sorted_to_compare_end + '? (y/n)')
-                response = input()
-                if response == 'y':
-                    insert_point = sorted_priorities.index(sorted_to_compare_end)
-                    sorted_priorities.insert(insert_point, next_compare)
-                    print(sorted_priorities)
-                elif response == 'n':
-                    insert_point = sorted_priorities.index(sorted_to_compare_end) + 1
-                    sorted_priorities.insert(insert_point, next_compare)
-                    print(sorted_priorities)
-            elif response == 'n':
-                sorted_to_compare_end = sorted_priorities[sorted_median + 1]
-                print('Is ' + next_compare + ' more important than ' + sorted_to_compare_end + '? (y/n)')
-                response = input()
-                if response == 'y':
-                    insert_point = sorted_priorities.index(sorted_to_compare_end)
-                    sorted_priorities.insert(insert_point, next_compare)
-                    print(sorted_priorities)
-                elif response == 'n':
-                    insert_point = sorted_priorities.index(sorted_to_compare_end) + 1
-                    sorted_priorities.insert(insert_point, next_compare)
-                    print(sorted_priorities)
+        if is_end is True:
+            new_end = sorted_end + 1
+            loop_down(next_compare, sorted_median, sorted_end, sorted_length, sorted_priorities)
+            print('Loop Count: ' + str(i))
+            print('is_end: ' + str(is_end))
+            print('Is Even: ' + str(is_even))
+            print('Is Odd: ' + str(is_odd))
+            print('sorted_start: ' + str(sorted_start))
+            print('sorted_median: ' + str(sorted_median))
+            print('sorted_end: ' + str(sorted_end))
+            print(sorted_priorities)
+        elif is_end is False:
+            loop_down(next_compare, sorted_median, sorted_end, sorted_length, sorted_priorities)
+            print('Loop Count: ' + str(i))
+            print('is_end: ' + str(is_end))
+            print('Is Even: ' + str(is_even))
+            print('Is Odd: ' + str(is_odd))
+            print('sorted_start: ' + str(sorted_start))
+            print('sorted_median: ' + str(sorted_median))
+            print('sorted_end: ' + str(sorted_end))
+            print(sorted_priorities)
+
+
+def loop_down(next_compare, sorted_median, sorted_end, sorted_length, sorted_priorities):
+    try:
+        for i in range(sorted_length):
+            to_compare = sorted_priorities[sorted_median + i]
+            print('> Is ' + next_compare + ' more important than ' + to_compare + '?')
+            print('> input: n')
+    except IndexError:
+        to_compare = sorted_priorities[sorted_end]
+        new_end = sorted_end + 1
+        sorted_priorities.insert(new_end, next_compare)
+        print('> ' + next_compare + ' is least important.')
+        print('> Inserting ' + next_compare + ' at ' + str(new_end))
+
+
+def check_end(sorted_priorities, sorted_median):
+    try:
+        trythis = sorted_priorities[sorted_median + 1]
+        return False
+    except IndexError:
+        return True
 
 
 SORTED_PRIORITIES = primer(TO_PRIORITIZE, SORTED_PRIORITIES)
-print(SORTED_PRIORITIES)
+print('Primed')
 sort_loop(TO_PRIORITIZE, SORTED_PRIORITIES)
