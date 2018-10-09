@@ -27,29 +27,54 @@ def sort_the_rest(to_prioritize, sorted_priorities, positions):
 
     i = 2
     while i < positions.unsorted_priorities.end:
+        last_response = ''
         positions = Positions(to_prioritize, sorted_priorities)
         to_compare_a = to_prioritize[i]
-        j = 0
+        j = positions.sorted_priorities.median
         while j < positions.sorted_priorities.end:
             if j >= 0:
+                print('j: ' + str(j))
                 to_compare_b = sorted_priorities[j]
                 compare_message(to_compare_a, to_compare_b)
                 response = get_input()
                 input_message(response)
-                if response == 'n':
-                    j += 1
-                if response == 'y':
-                    j -= 1
+                if last_response == '':
+                    if response == 'n':
+                        last_response = response
+                        j += 1
+                    if response == 'y':
+                        last_response = response
+                        j -= 1
+                elif last_response == 'n':
+                    if response == 'y':
+                        break
+                    if response == 'n':
+                        last_response = response
+                        j += 1
+                elif last_response == 'y':
+                    if response == 'n':
+                        break
+                    if response == 'y':
+                        last_response = response
+                        j -= 1
             elif j < 0:
                 break
         end = True
         if end is True:
             if response == 'n':
-                sorted_priorities.insert(positions.sorted_priorities.end, to_compare_a)
-                print(sorted_priorities)
+                if j == positions.sorted_priorities.end:
+                    sorted_priorities.insert(j + 1, to_compare_a)
+                    print(sorted_priorities)
+                else:
+                    sorted_priorities.insert(j + 1, to_compare_a)
+                    print(sorted_priorities)
             if response == 'y':
-                sorted_priorities.insert(positions.sorted_priorities.start, to_compare_a)
-                print(sorted_priorities)
+                if j < 0:
+                    sorted_priorities.insert(positions.sorted_priorities.start, to_compare_a)
+                    print(sorted_priorities)
+                else:
+                    sorted_priorities.insert(j, to_compare_a)
+                    print(sorted_priorities)
         i += 1
 
 
