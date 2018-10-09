@@ -31,15 +31,24 @@ def sort_the_rest(to_prioritize, sorted_priorities, positions):
         to_compare_a = to_prioritize[i]
         j = 0
         while j < positions.sorted_priorities.end:
-            to_compare_b = sorted_priorities[j]
-            compare_message(to_compare_a, to_compare_b)
-            response = get_input()
-            input_message(response)
-            j += 1
+            if j >= 0:
+                to_compare_b = sorted_priorities[j]
+                compare_message(to_compare_a, to_compare_b)
+                response = get_input()
+                input_message(response)
+                if response == 'n':
+                    j += 1
+                if response == 'y':
+                    j -= 1
+            elif j < 0:
+                break
         end = True
         if end is True:
             if response == 'n':
                 sorted_priorities.insert(positions.sorted_priorities.end, to_compare_a)
+                print(sorted_priorities)
+            if response == 'y':
+                sorted_priorities.insert(positions.sorted_priorities.start, to_compare_a)
                 print(sorted_priorities)
         i += 1
 
@@ -100,7 +109,7 @@ def input_message(response):
 
 
 def get_input():
-    response = 'n'
+    response = input()
     return response
 
 
