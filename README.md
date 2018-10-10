@@ -29,15 +29,13 @@ It requires a seeding of deciding on a first two items. A seeded array will look
 
 The next items will do their comparison on the median,
 
-> Is C more important than B?
-
-#### Input
+# Question Pattern
+#### Inputs
 > <table>
 >     <tr>
 >         <td>A</td>
 >         <td>B</td>
 >         <td><span style="color: red">C</span></td>
->         <td>C</td>
 >         <td>D</td>
 >         <td>E</td>
 >         <td>F</td>
@@ -46,7 +44,7 @@ The next items will do their comparison on the median,
 >     </tr>
 > </table>
 
-#### Comparison
+#### Comparing To Table
 > <table>
 >     <tr>
 >         <td>A</td>
@@ -54,6 +52,9 @@ The next items will do their comparison on the median,
 >         <td>D</td>
 >     </tr>
 > </table>
+
+#### Question
+> Is C more important than B?
 
 #### Results
 > If "y"
@@ -78,7 +79,7 @@ The next items will do their comparison on the median,
 >     </tr>
 > </table>
 
-## Sorting Cover
+## Sorting Coverage
 To cover all possible sorting positions, this will sort out from the median to an end or the next encountered different answer.
 
 > If "y" twice and at end
