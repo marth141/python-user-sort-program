@@ -35,8 +35,8 @@ The next items will do their comparison on the median,
 >     <tr>
 >         <td>A</td>
 >         <td>B</td>
->         <td><span style="color: red">C</span></td>
->         <td>D</td>
+>         <td>C</td>
+>         <td><span style="color: red">D</span></td>
 >         <td>E</td>
 >         <td>F</td>
 >         <td>G</td>
@@ -49,12 +49,12 @@ The next items will do their comparison on the median,
 >     <tr>
 >         <td>A</td>
 >         <td><span style="color: red">B</span></td>
->         <td>D</td>
+>         <td>C</td>
 >     </tr>
 > </table>
 
 #### Question
-> Is C more important than B?
+> Is D more important than B?
 
 #### Results
 > If "y"
@@ -62,9 +62,9 @@ The next items will do their comparison on the median,
 > <table>
 >     <tr>
 >         <td>A</td>
->         <td><span style="color: red">C</span></td>
+>         <td><span style="color: red">D</span></td>
 >         <td>B</td>
->         <td>D</td>
+>         <td>C</td>
 >     </tr>
 > </table>
 
@@ -74,22 +74,22 @@ The next items will do their comparison on the median,
 >     <tr>
 >         <td>A</td>
 >         <td>B</td>
->         <td><span style="color: red">C</span></td>
->         <td>D</td>
+>         <td><span style="color: red">D</span></td>
+>         <td>C</td>
 >     </tr>
 > </table>
 
-## Sorting Coverage
+# Sorting Coverage
 To cover all possible sorting positions, this will sort out from the median to an end or the next encountered different answer.
 
 > If "y" twice and at end
 > #### Output
 > <table>
 >     <tr>
->         <td><span style="color: red">C</span></td>
+>         <td><span style="color: red">D</span></td>
 >         <td>A</td>
 >         <td>B</td>
->         <td>D</td>
+>         <td>C</td>
 >     </tr>
 > </table>
 
@@ -100,8 +100,8 @@ To cover all possible sorting positions, this will sort out from the median to a
 >     <tr>
 >         <td>A</td>
 >         <td>B</td>
->         <td>D</td>
->         <td><span style="color: red">C</span></td>
+>         <td>C</td>
+>         <td><span style="color: red">D</span></td>
 >     </tr>
 > </table>
 
@@ -111,9 +111,9 @@ To cover all possible sorting positions, this will sort out from the median to a
 > <table>
 >     <tr>
 >         <td>A</td>
->         <td><span style="color: red">C</span></td>
+>         <td><span style="color: red">D</span></td>
 >         <td>B</td>
->         <td>D</td>
+>         <td>C</td>
 >     </tr>
 > </table>
 
@@ -124,7 +124,7 @@ To cover all possible sorting positions, this will sort out from the median to a
 >     <tr>
 >         <td>A</td>
 >         <td>B</td>
->         <td><span style="color: red">C</span></td>
->         <td>D</td>
+>         <td><span style="color: red">D</span></td>
+>         <td>C</td>
 >     </tr>
 > </table>
