@@ -47,6 +47,7 @@ def sort_the_rest(to_prioritize, sorted_priorities, positions):
         last_response = ''
         positions = Positions(to_prioritize, sorted_priorities)
         to_compare_a = to_prioritize[i]
+        
         j = positions.sorted_priorities.median
         while j < positions.sorted_priorities.end:
             if j >= 0:
@@ -99,15 +100,6 @@ def sort_the_rest(to_prioritize, sorted_priorities, positions):
                     print(sorted_priorities)
         i += 1
     return sorted_priorities
-
-
-def yes_no(response):
-    if response == 'y':
-        print('> input: ' + response)
-        return
-    elif response == 'n':
-        print('> input: ' + response)
-        return
 
 
 def compare_message(compare_a, compare_b):
