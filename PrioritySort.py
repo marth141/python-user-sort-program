@@ -121,7 +121,7 @@ def input_message(response):
 
 
 def get_input():
-    response = 'n'
+    response = input()
     return response
 
 
