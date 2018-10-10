@@ -4,80 +4,145 @@ TO_PRIORITIZE = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 SORTED_PRIORITIES = []
 
 
-def primer(priorities, sorted_priorities):
-    first_item = priorities[0]
-    second_item = priorities[1]
-    print('Is ' + first_item + ' more important than ' + second_item + '? (y/n)')
-    response = input()
-    if response == 'y':
-        sorted_priorities.append(first_item)
-        sorted_priorities.append(second_item)
-        return sorted_priorities
-    elif response == 'n':
-        sorted_priorities.append(second_item)
-        sorted_priorities.append(first_item)
-        return sorted_priorities
+def prioritize(to_prioritize, sorted_priorities):
+    print('=== prioritize Inputs ===')
+    print('input: ' + str(to_prioritize))
+    print('input: ' + str(sorted_priorities))
+
+    compare(to_prioritize, sorted_priorities)
 
 
-def sort_loop(priorities, sorted_priorities):
+def compare(to_prioritize, sorted_priorities):
+    # Compare to prioritize 1 and 2
+    positions = Positions(to_prioritize, sorted_priorities)
+    to_compare_a = to_prioritize[1]
+    to_compare_b = to_prioritize[0]
+    sorted_priorities = seed_sorted_list(to_compare_a, to_compare_b, positions, sorted_priorities)
+    sorted_priorities = sort_the_rest(to_prioritize, sorted_priorities, positions)
+    print('Final List: ' + str(sorted_priorities))
+
+
+def seed_sorted_list(to_compare_a, to_compare_b, positions, sorted_priorities):
+    compare_message(to_compare_a, to_compare_b)
+    response = get_input()
+    input_message(response)
+    if response == 'n':
+        if (positions.sorted_priorities.end == positions.sorted_priorities.median):
+            sorted_priorities.insert(positions.sorted_priorities.end, to_compare_a)
+            sorted_priorities.insert(positions.sorted_priorities.end, to_compare_b)
+            return sorted_priorities
+    elif response == 'y':
+        if (positions.sorted_priorities.end == positions.sorted_priorities.median):
+            sorted_priorities.insert(positions.sorted_priorities.end, to_compare_b)
+            sorted_priorities.insert(positions.sorted_priorities.end, to_compare_a)
+            return sorted_priorities
+
+
+def sort_the_rest(to_prioritize, sorted_priorities, positions):
     print(sorted_priorities)
-    for i in range(2, len(priorities)):
-        next_compare = priorities[i]
-        sorted_length = len(sorted_priorities)
+    comparisons = 0
 
-        is_even = sorted_length % 2 == 0
-        is_odd = sorted_length % 2 != 0
+    i = 2
+    while i < positions.unsorted_priorities.end:
+        last_response = ''
+        positions = Positions(to_prioritize, sorted_priorities)
+        to_compare_a = to_prioritize[i]
+        j = positions.sorted_priorities.median
+        while j < positions.sorted_priorities.end:
+            if j >= 0:
+                print('j: ' + str(j))
+                to_compare_b = sorted_priorities[j]
+                compare_message(to_compare_a, to_compare_b)
+                response = get_input()
+                input_message(response)
+                if last_response == '':
+                    if response == 'n':
+                        last_response = response
+                        comparisons += 1
+                        j += 1
+                    if response == 'y':
+                        last_response = response
+                        comparisons += 1
+                        j -= 1
+                elif last_response == 'n':
+                    if response == 'y':
+                        comparisons += 1
+                        break
+                    if response == 'n':
+                        last_response = response
+                        comparisons += 1
+                        j += 1
+                elif last_response == 'y':
+                    if response == 'n':
+                        comparisons += 1
+                        break
+                    if response == 'y':
+                        last_response = response
+                        comparisons += 1
+                        j -= 1
+            elif j < 0:
+                break
+        end = True
+        if end is True:
+            if response == 'n':
+                    sorted_priorities.insert(j + 1, to_compare_a)
+                    print('Comparisons: ' + str(comparisons))
+                    print(sorted_priorities)
+            if response == 'y':
+                if j < 0:
+                    sorted_priorities.insert(positions.sorted_priorities.start, to_compare_a)
+                    print('Comparisons: ' + str(comparisons))
+                    print(sorted_priorities)
+                else:
+                    sorted_priorities.insert(j, to_compare_a)
+                    print('Comparisons: ' + str(comparisons))
+                    print(sorted_priorities)
+        i += 1
+    return sorted_priorities
 
-        sorted_start = 0
-        sorted_median = int(sorted_length / 2)
-        sorted_end = sorted_length - 1
-        is_end = check_end(sorted_priorities, sorted_median)
 
-        if is_end is True:
-            new_end = sorted_end + 1
-            loop_down(next_compare, sorted_median, sorted_end, sorted_length, sorted_priorities)
-            print('Loop Count: ' + str(i))
-            print('is_end: ' + str(is_end))
-            print('Is Even: ' + str(is_even))
-            print('Is Odd: ' + str(is_odd))
-            print('sorted_start: ' + str(sorted_start))
-            print('sorted_median: ' + str(sorted_median))
-            print('sorted_end: ' + str(sorted_end))
-            print(sorted_priorities)
-        elif is_end is False:
-            loop_down(next_compare, sorted_median, sorted_end, sorted_length, sorted_priorities)
-            print('Loop Count: ' + str(i))
-            print('is_end: ' + str(is_end))
-            print('Is Even: ' + str(is_even))
-            print('Is Odd: ' + str(is_odd))
-            print('sorted_start: ' + str(sorted_start))
-            print('sorted_median: ' + str(sorted_median))
-            print('sorted_end: ' + str(sorted_end))
-            print(sorted_priorities)
+def yes_no(response):
+    if response == 'y':
+        print('> input: ' + response)
+        return
+    elif response == 'n':
+        print('> input: ' + response)
+        return
 
 
-def loop_down(next_compare, sorted_median, sorted_end, sorted_length, sorted_priorities):
-    try:
-        for i in range(sorted_length):
-            to_compare = sorted_priorities[sorted_median + i]
-            print('> Is ' + next_compare + ' more important than ' + to_compare + '?')
-            print('> input: n')
-    except IndexError:
-        to_compare = sorted_priorities[sorted_end]
-        new_end = sorted_end + 1
-        sorted_priorities.insert(new_end, next_compare)
-        print('> ' + next_compare + ' is least important.')
-        print('> Inserting ' + next_compare + ' at ' + str(new_end))
+def compare_message(compare_a, compare_b):
+    print('> Is ' + compare_a + ' more important than ' + compare_b + '? (y/n)')
+    return
 
 
-def check_end(sorted_priorities, sorted_median):
-    try:
-        trythis = sorted_priorities[sorted_median + 1]
-        return False
-    except IndexError:
-        return True
+def input_message(response):
+    print('> input: ' + response)
+    return
 
 
-SORTED_PRIORITIES = primer(TO_PRIORITIZE, SORTED_PRIORITIES)
-print('Primed')
-sort_loop(TO_PRIORITIZE, SORTED_PRIORITIES)
+def get_input():
+    response = 'n'
+    return response
+
+
+class Position:
+    def __init__(self, array_to_get):
+        array_length = len(array_to_get)
+        self.start = 0
+        self.median = int(array_length / 2)
+        self.end = array_length
+
+
+class Positions:
+    def __init__(self, to_sort_array, end_array):
+        self.unsorted_priorities = Position(to_sort_array)
+        self.sorted_priorities = Position(end_array)
+        print('sorted_positions start: ' + str(self.sorted_priorities.start))
+        print('sorted_positions median: ' + str(self.sorted_priorities.median))
+        print('sorted_positions end: ' + str(self.sorted_priorities.end))
+        print('unsorted_positions start: ' + str(self.unsorted_priorities.start))
+        print('unsorted_positions median: ' + str(self.unsorted_priorities.median))
+        print('unsorted_positions end: ' + str(self.unsorted_priorities.end))
+
+
+prioritize(TO_PRIORITIZE, SORTED_PRIORITIES)
