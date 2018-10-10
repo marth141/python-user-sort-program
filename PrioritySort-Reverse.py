@@ -9,7 +9,6 @@ def prioritize(to_prioritize, sorted_priorities):
     print('input: ' + str(to_prioritize))
     print('input: ' + str(sorted_priorities))
 
-    # Get positions
     compare(to_prioritize, sorted_priorities)
 
 
@@ -62,10 +61,6 @@ def sort_the_rest(to_prioritize, sorted_priorities, positions):
         end = True
         if end is True:
             if response == 'n':
-                if j == positions.sorted_priorities.end:
-                    sorted_priorities.insert(j + 1, to_compare_a)
-                    print(sorted_priorities)
-                else:
                     sorted_priorities.insert(j + 1, to_compare_a)
                     print(sorted_priorities)
             if response == 'y':
