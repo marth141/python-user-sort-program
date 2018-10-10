@@ -35,7 +35,7 @@ The next items will do their comparison on the median,
 >     <tr>
 >         <td>A</td>
 >         <td>B</td>
->         <td><span style="color: red">C</span></td>
+>         <td><b>C</b></td>
 >         <td>D</td>
 >         <td>E</td>
 >         <td>F</td>
