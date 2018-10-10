@@ -45,13 +45,13 @@ The next items will do their comparison on the median,
 > </table>
 
 #### Comparing To Table
-<table>
-    <tr>
-        <td>A</td>
-        <td><span style="color: red">B</span></td>
-        <td>D</td>
-    </tr>
-</table>
+> <table>
+>     <tr>
+>         <td>A</td>
+>         <td><span style="color: red">B</span></td>
+>         <td>D</td>
+>     </tr>
+> </table>
 
 #### Question
 > Is C more important than B?
